@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h2>Welcome, {{ current_user.username }}!</h2>
+    <button onclick="startCapture()">Start Emotion Capture</button>
+    <button onclick="stopCapture()">Stop Emotion Capture</button>
+    <script>
+        function startCapture() {
+            window.location.href = "{{ url_for('capture_emotion') }}";
+        }
+
+        function stopCapture() {
+
+            // Logic to stop emotion capture can be implemented here
+            window.location.href = "{{ url_for('view_emotions') }}";
+        }
+    </script>
+    <br><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+
+</html>

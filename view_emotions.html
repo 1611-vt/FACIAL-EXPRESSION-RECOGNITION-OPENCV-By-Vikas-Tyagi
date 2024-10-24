@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Emotions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h2>Emotions Detected</h2>
+    <ul>
+        {% for emotion in emotions %}
+        <li>{{ emotion.emotion }} - {{ emotion.timestamp }}</li>
+        {% endfor %}
+    </ul>
+    <br><br>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+
+</html>
